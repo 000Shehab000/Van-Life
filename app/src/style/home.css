@@ -11,7 +11,6 @@
   margin: 0;
   font-family: Inter;
   font-weight: 800;
-  font-style: Extra Bold;
   font-size: 36px;
   color: white;
 }
@@ -19,21 +18,26 @@
 .home-container p {
   font-family: Inter;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
   color: white;
+  margin: 20px 0;
 }
 
-.home-container button {
+.home-container a {
   font-family: Inter;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 15.95px;
+  font-size: 15px;
   background-color: #ff8c38;
+  color: white;
   width: 495px;
   height: 50px;
   opacity: 1;
   border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
 }

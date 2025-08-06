@@ -1,6 +1,7 @@
 import Header from './Header'
 import Footer from './Footer'
 import '../style/home.css'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -10,10 +11,13 @@ export default function Home() {
         <div className="discprition-container">
           <h1>You got the travel plans, we got the travel vans.</h1>
           <p>
-            Add adventure to your life by joining the #vanlife movement. Rent
-            the perfect van to make your perfect road trip.
+            Add adventure to your life by joining the #vanlife movement.
+            <br />
+            Rent the perfect van to make your perfect road trip.
           </p>
-          <button>Find your van</button>
+          <Link className="button-link" to={'/vans'}>
+            Find your van
+          </Link>
         </div>
       </div>
       <Footer />
