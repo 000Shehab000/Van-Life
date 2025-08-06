@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-.container {
+header .container {
   background-color: #fff7ed;
   height: 110px;
   display: flex;
