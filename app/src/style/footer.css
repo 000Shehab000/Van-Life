@@ -1,0 +1,12 @@
+footer {
+  height: 75px;
+  opacity: 1;
+  background-color: #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaaaaa;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+}
