@@ -20,6 +20,8 @@ header .container {
   margin: 0px;
   font-weight: 900;
   font-size: 25.35px;
+  color: #000000;
+  text-decoration: none;
 }
 
 nav a {
@@ -28,6 +30,5 @@ nav a {
   color: #4d4d4d;
   font-family: Inter;
   font-weight: 600;
-  font-style: Semi Bold;
   font-size: 16px;
 }
