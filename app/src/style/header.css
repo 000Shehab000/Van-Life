@@ -39,4 +39,5 @@ nav a.active {
   color: #000;
   font-weight: bold;
   text-decoration: underline;
+  transform: translate(1px, 1px);
 }
