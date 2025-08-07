@@ -2,6 +2,7 @@ import Van from '../components/VanCard'
 import '../style/vans.css'
 import { useState, useEffect } from 'react'
 import '../server'
+import { Link } from 'react-router-dom'
 
 export default function Vans() {
   const [vans, setVans] = useState([])
@@ -13,13 +14,14 @@ export default function Vans() {
   }, [])
 
   const allVans = vans.map((vanObject) => (
-    <Van
-      key={vanObject.id}
-      name={vanObject.name}
-      imageUrl={vanObject.imageUrl}
-      type={vanObject.type}
-      price={vanObject.price}
-    />
+    <Link key={vanObject.id} to={`/vans/${vanObject.id}`}>
+      <Van
+        name={vanObject.name}
+        imageUrl={vanObject.imageUrl}
+        type={vanObject.type}
+        price={vanObject.price}
+      />
+    </Link>
   ))
 
   return (
