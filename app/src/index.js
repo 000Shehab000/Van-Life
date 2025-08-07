@@ -7,6 +7,9 @@ import Vans from './pages/Vans'
 import VanDetails from './pages/VanDetails'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import makeServer from './server'
+
+makeServer()
 
 function App() {
   return (
