@@ -4,18 +4,24 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Vans from './pages/Vans'
+import VanDetails from './pages/VanDetails'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <React.StrictMode>
-      <BrowserRouter>
+    <BrowserRouter>
+      <React.StrictMode>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VanDetails />} />
         </Routes>
-      </BrowserRouter>
-    </React.StrictMode>
+        <Footer />
+      </React.StrictMode>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,3 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Van from '../components/VanCard'
 import '../style/vans.css'
 import { useState, useEffect } from 'react'
@@ -25,13 +23,9 @@ export default function Vans() {
   ))
 
   return (
-    <>
-      <Header />
-      <div className="vans-container">
-        <h1>Explore our van options</h1>
-        <div className="vans-card-container">{allVans}</div>
-      </div>
-      <Footer />
-    </>
+    <div className="vans-container">
+      <h1>Explore our van options</h1>
+      <div className="vans-card-container">{allVans}</div>
+    </div>
   )
 }

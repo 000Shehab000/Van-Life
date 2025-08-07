@@ -1,26 +1,20 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import '../style/home.css'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <div className="home-container">
-        <div className="discprition-container">
-          <h1>You got the travel plans, we got the travel vans.</h1>
-          <p>
-            Add adventure to your life by joining the #vanlife movement.
-            <br />
-            Rent the perfect van to make your perfect road trip.
-          </p>
-          <Link className="button-link" to={'/vans'}>
-            Find your van
-          </Link>
-        </div>
+    <div className="home-container">
+      <div className="discprition-container">
+        <h1>You got the travel plans, we got the travel vans.</h1>
+        <p>
+          Add adventure to your life by joining the #vanlife movement.
+          <br />
+          Rent the perfect van to make your perfect road trip.
+        </p>
+        <Link className="button-link" to={'/vans'}>
+          Find your van
+        </Link>
       </div>
-      <Footer />
-    </>
+    </div>
   )
 }
