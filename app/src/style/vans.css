@@ -1,0 +1,58 @@
+.vans-container {
+  padding: 0 30px;
+}
+
+.vans-container h1 {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 32px;
+  color: #161616;
+}
+
+.vans-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.van-container {
+  width: 230px;
+  margin-bottom: 30px;
+}
+
+.van-container img {
+  width: 230px;
+  height: 230px;
+  border-radius: 5px;
+}
+
+.van-container h3 {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.van-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.price b {
+  font-size: 20px;
+}
+
+.van-container .category {
+  background-color: #e17654;
+  color: #ffead0;
+  width: 85px;
+  height: 33px;
+  border-radius: 5px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
