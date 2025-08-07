@@ -1,18 +1,17 @@
-import vanImage from '../images/van.png'
 import '../style/vans.css'
 
-export default function Van() {
+export default function Van(props) {
   return (
     <div className="van-container">
-      <img src={vanImage} alt="van" />
+      <img src={props.imageUrl} alt="van" />
       <div className="van-details">
-        <h3>Modest Explorer</h3>
+        <h3>{props.name}r</h3>
         <span className="price">
-          <b>$60 </b>
+          <b>${props.price} </b>
           <br /> /day
         </span>
       </div>
-      <div className="category">Simple</div>
+      <div className={`category ${props.type}`}>{props.type}</div>
     </div>
   )
 }
