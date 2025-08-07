@@ -44,7 +44,6 @@
 }
 
 .van-container .category {
-  background-color: #e17654;
   color: #ffead0;
   width: 85px;
   height: 33px;
@@ -55,4 +54,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.category.simple {
+  background-color: #e17654;
+}
+
+.category.luxury {
+  background-color: #161616;
+}
+
+.category.rugged {
+  background-color: #115e59;
 }
