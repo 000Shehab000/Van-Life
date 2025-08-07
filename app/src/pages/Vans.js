@@ -1,7 +1,6 @@
 import Van from '../components/VanCard'
 import '../style/vans.css'
 import { useState, useEffect } from 'react'
-import '../server'
 import { Link } from 'react-router-dom'
 
 export default function Vans() {
