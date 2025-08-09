@@ -1,0 +1,39 @@
+.host-vans-container {
+  padding: 0 30px;
+}
+
+.host-vans-container h1 {
+  margin: 55px 0 32px;
+}
+
+.host-van-card-container {
+  width: 494px;
+  height: 102px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.host-van-card-container img {
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+  margin: 0 20px 0 25px;
+}
+
+.host-van-card-text h4 {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.host-van-card-text p {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #4d4d4d;
+  margin: 0;
+}
