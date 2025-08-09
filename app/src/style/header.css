@@ -27,7 +27,7 @@ header .container {
 
 nav a {
   text-decoration: none;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   color: #4d4d4d;
   font-family: Inter;
   font-weight: 600;
@@ -43,5 +43,5 @@ nav a.active {
 }
 
 .dashboard-nav {
-  padding: 0 14px;
+  padding: 0px 6px;
 }
