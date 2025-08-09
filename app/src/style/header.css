@@ -41,3 +41,7 @@ nav a.active {
   text-decoration: underline;
   transform: translate(1px, 1px);
 }
+
+.dashboard-nav {
+  padding: 0 14px;
+}
