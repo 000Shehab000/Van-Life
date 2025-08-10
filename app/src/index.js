@@ -11,6 +11,11 @@ import Income from './pages/host/Income'
 import Reviews from './pages/host/Reviews'
 import makeServer from './server'
 import HostLayout from './components/HostLayout'
+import HostVans from './pages/host/HostVans'
+import HostVansDetails from './pages/host/HostVansDetails'
+import Details from './pages/host/Details'
+import Pricing from './pages/host/Pricing'
+import Photos from './pages/host/Photos'
 
 makeServer()
 
@@ -29,6 +34,12 @@ function App() {
               <Route index element={<Dashboard />} />
               <Route path="income" element={<Income />} />
               <Route path="reviews" element={<Reviews />} />
+              <Route path="vans" element={<HostVans />} />
+              <Route path="vans/:id" element={<HostVansDetails />}>
+                <Route index element={<Details />} />
+                <Route path="pricing" element={<Pricing />} />
+                <Route path="photos" element={<Photos />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
