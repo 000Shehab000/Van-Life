@@ -7,26 +7,26 @@ export default function HostLayout() {
       <nav className="dashboard-nav">
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : '')}
-          to="/host"
+          to="." //it links to /host which is the parent route
           end
         >
           Dashboard
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : '')}
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : '')}
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? 'active' : '')}
-          to="/host/reviews"
+          to="reviews"
         >
           Reviews
         </NavLink>
