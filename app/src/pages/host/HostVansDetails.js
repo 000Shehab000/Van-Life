@@ -37,20 +37,20 @@ export default function HostVansDetails() {
         <nav>
           <NavLink
             className={({ isActive }) => (isActive ? 'active' : '')}
-            to={`/host/vans/${id}`}
+            to="."
             end
           >
             Details
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? 'active' : '')}
-            to={`/host/vans/${id}/pricing`}
+            to="pricing"
           >
             Pricing
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? 'active' : '')}
-            to={`/host/vans/${id}/photos`}
+            to="photos"
           >
             Photos
           </NavLink>
