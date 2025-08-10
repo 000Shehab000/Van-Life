@@ -41,7 +41,6 @@
 
 .host-van-container {
   width: 496px;
-  height: 499px;
   border-radius: 6px;
   background-color: #ffffff;
   margin: 30px;
@@ -69,4 +68,18 @@
 
 .back-button {
   margin: 40px 0 35px 30px;
+}
+
+.host-van-pricing {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.host-van-pricing span {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 24px;
+  color: #161616;
 }
