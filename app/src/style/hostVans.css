@@ -90,3 +90,7 @@
   border-radius: 5px;
   margin-top: 30px;
 }
+
+section p {
+  margin: 25px 0;
+}
