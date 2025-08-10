@@ -33,6 +33,9 @@ nav a {
   font-weight: 600;
   font-size: 16px;
 }
+nav a:first-child {
+  margin: 0;
+}
 
 nav a:hover,
 nav a.active {
@@ -43,5 +46,5 @@ nav a.active {
 }
 
 .dashboard-nav {
-  padding: 0px 6px;
+  margin-left: 30px;
 }

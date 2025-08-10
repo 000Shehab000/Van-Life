@@ -38,3 +38,35 @@
   color: #4d4d4d;
   margin: 0;
 }
+
+.host-van-container {
+  width: 496px;
+  height: 499px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  margin: 30px;
+  padding: 23px 25px;
+}
+
+.host-van-details-container {
+  display: flex;
+}
+
+.host-van-details-container img {
+  width: 160px;
+  height: 158px;
+  border-radius: 5px;
+  margin: 0 20px 27px 0;
+}
+
+.host-van-details-text {
+  margin-top: 25px;
+}
+
+.host-van-details-text h2 {
+  margin: 15px 0 8px;
+}
+
+.back-button {
+  margin: 40px 0 35px 30px;
+}
