@@ -12,17 +12,24 @@ export default function VanDetails() {
   }, [id])
 
   return (
-    <div className="van-details-container">
-      <img src={van.imageUrl} alt="" />
-      <div className={`category ${van.type}`}>{van.type}</div>
-      <h1>{van.name}</h1>
-      <span className="price">
-        <b>${van.price} </b> /day
-      </span>
-      <p>{van.description}</p>
-      <Link className="button-link" to={'/vans'}>
-        Rent this van
-      </Link>
-    </div>
+    <>
+      <nav className="back-button">
+        <Link to=".." relative="path">
+          &larr;Back to all vans
+        </Link>
+      </nav>
+      <div className="van-details-container">
+        <img src={van.imageUrl} alt="" />
+        <div className={`category ${van.type}`}>{van.type}</div>
+        <h1>{van.name}</h1>
+        <span className="price">
+          <b>${van.price} </b> /day
+        </span>
+        <p>{van.description}</p>
+        <Link className="button-link" to={'/vans'}>
+          Rent this van
+        </Link>
+      </div>
+    </>
   )
 }
