@@ -13,7 +13,6 @@ export default function HostVansDetails() {
       .then((res) => res.json())
       .then((data) => setHostVanDetails(data.vans))
   }, [id])
-  console.log(hostVanDetails)
 
   return (
     <>
