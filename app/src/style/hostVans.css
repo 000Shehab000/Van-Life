@@ -83,3 +83,10 @@
   font-size: 24px;
   color: #161616;
 }
+
+.host-van-photo {
+  width: 103px;
+  height: 101px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
