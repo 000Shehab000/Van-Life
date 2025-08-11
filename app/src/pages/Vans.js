@@ -19,7 +19,7 @@ export default function Vans() {
     : vans
 
   const allVans = filteredVans.map((vanObject) => (
-    <Link key={vanObject.id} to={`/vans/${vanObject.id}`}>
+    <Link key={vanObject.id} to={vanObject.id}>
       <Van
         name={vanObject.name}
         imageUrl={vanObject.imageUrl}

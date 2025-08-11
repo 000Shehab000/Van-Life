@@ -12,7 +12,7 @@ export default function HostVans() {
   }, [])
 
   const allHostVans = hostVans.map((hostVanobj) => (
-    <Link to={`/host/vans/${hostVanobj.id}`} key={hostVanobj.id}>
+    <Link to={hostVanobj.id} key={hostVanobj.id}>
       <HostVanCard
         image={hostVanobj.imageUrl}
         name={hostVanobj.name}
