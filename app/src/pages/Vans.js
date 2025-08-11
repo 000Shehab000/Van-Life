@@ -1,10 +1,12 @@
 import Van from '../components/VanCard'
 import '../style/vans.css'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 export default function Vans() {
   const [vans, setVans] = useState([])
+  const [searchParams, setSearchParams] = useSearchParams()
+  const typeFilter = searchParams.get('type')
 
   useEffect(() => {
     fetch('/api/vans')
@@ -12,7 +14,11 @@ export default function Vans() {
       .then((data) => setVans(data.vans))
   }, [])
 
-  const allVans = vans.map((vanObject) => (
+  const filteredVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans
+
+  const allVans = filteredVans.map((vanObject) => (
     <Link key={vanObject.id} to={`/vans/${vanObject.id}`}>
       <Van
         name={vanObject.name}
@@ -26,6 +32,35 @@ export default function Vans() {
   return (
     <div className="vans-container">
       <h1>Explore our van options</h1>
+      <nav className="filter-buttons">
+        <button
+          className="van-type simple"
+          onClick={() => setSearchParams({ type: 'simple' })}
+        >
+          Simple
+        </button>
+        <button
+          className="van-type rugged"
+          onClick={() => setSearchParams({ type: 'rugged' })}
+        >
+          Rugged
+        </button>
+        <button
+          className="van-type luxury"
+          onClick={() => setSearchParams({ type: 'luxury' })}
+        >
+          Luxury
+        </button>
+        {typeFilter && (
+          <button
+            className="van-type clear-filters"
+            onClick={() => setSearchParams({ type: '' })}
+          >
+            Clear filter
+          </button>
+        )}
+      </nav>
+
       <div className="vans-card-container">{allVans}</div>
     </div>
   )
