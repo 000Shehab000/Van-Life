@@ -15,6 +15,8 @@ export default function VanDetails() {
 
   // use optional chaining for returning search key if exist else ""
   const search = location.state?.search || ''
+  // use optional chaining for editing back button text ex: simple, luxury, all
+  const type = location.state?.type || 'all'
 
   return (
     <>
@@ -24,7 +26,7 @@ export default function VanDetails() {
           to={`..?${search}`}
           relative="path"
         >
-          &larr;Back to all vans
+          &larr;{`Back to ${type} vans`}
         </Link>
       </nav>
       <div className="van-details-container">

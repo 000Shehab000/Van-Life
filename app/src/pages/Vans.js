@@ -22,7 +22,7 @@ export default function Vans() {
     <Link
       key={vanObject.id}
       to={vanObject.id}
-      state={{ search: searchParams.toString() }}
+      state={{ search: searchParams.toString(), type: typeFilter }}
     >
       <Van
         name={vanObject.name}
