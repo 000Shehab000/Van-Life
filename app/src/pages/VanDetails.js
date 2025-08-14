@@ -1,9 +1,11 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 export default function VanDetails() {
   const { id } = useParams()
   const [van, setVan] = useState({})
+  const location = useLocation()
+  console.log(location)
 
   useEffect(() => {
     fetch(`/api/vans/${id}`)
@@ -11,10 +13,17 @@ export default function VanDetails() {
       .then((data) => setVan(data.vans))
   }, [id])
 
+  // use optional chaining for returning search key if exist else ""
+  const search = location.state?.search || ''
+
   return (
     <>
       <nav className="back-button">
-        <Link to=".." relative="path">
+        <Link
+          // this to={} for returning back and keeping filters if exists ==> vans?type=...
+          to={`..?${search}`}
+          relative="path"
+        >
           &larr;Back to all vans
         </Link>
       </nav>

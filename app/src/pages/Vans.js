@@ -19,7 +19,11 @@ export default function Vans() {
     : vans
 
   const allVans = filteredVans.map((vanObject) => (
-    <Link key={vanObject.id} to={vanObject.id}>
+    <Link
+      key={vanObject.id}
+      to={vanObject.id}
+      state={{ search: searchParams.toString() }}
+    >
       <Van
         name={vanObject.name}
         imageUrl={vanObject.imageUrl}
@@ -54,7 +58,7 @@ export default function Vans() {
         {typeFilter && (
           <button
             className="van-type clear-filters"
-            onClick={() => setSearchParams({ type: '' })}
+            onClick={() => setSearchParams({})}
           >
             Clear filter
           </button>
