@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.not-found-container {
+  margin: 100px 30px;
+}
+
+.not-found-container h1 {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 32px;
+  color: #161616;
+}
+
+.not-found-container a {
+  width: 495px;
+  height: 55px;
+  border-radius: 5px;
+  background-color: #161616;
+  color: #ffffff;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
