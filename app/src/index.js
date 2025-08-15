@@ -16,6 +16,7 @@ import HostVansDetails from './pages/host/HostVansDetails'
 import Details from './pages/host/Details'
 import Pricing from './pages/host/Pricing'
 import Photos from './pages/host/Photos'
+import NotFound from './pages/NotFound'
 
 makeServer()
 
@@ -41,6 +42,7 @@ function App() {
                 <Route path="photos" element={<Photos />} />
               </Route>
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </React.StrictMode>
