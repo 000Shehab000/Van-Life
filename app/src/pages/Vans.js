@@ -1,34 +1,40 @@
 import Van from '../components/VanCard'
 import '../style/vans.css'
 import { useState, useEffect } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useLoaderData, useSearchParams } from 'react-router-dom'
 import { getVans } from '../api'
+
+export function loader() {
+  return getVans()
+}
 
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [vans, setVans] = useState([])
-  const [loading, setLoading] = useState(false)
+  // const [vans, setVans] = useState([])
+  // const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const typeFilter = searchParams.get('type')
 
-  useEffect(() => {
-    async function loadVans() {
-      setLoading(true)
-      try {
-        const data = await getVans()
-        setVans(data)
-      } catch (err) {
-        setError(err)
-      }
-      setLoading(false)
-    }
-    loadVans()
-  }, [])
+  const vans = useLoaderData()
 
-  if (loading) {
-    return <h1 aria-live="polite">Loading...</h1>
-  }
+  // useEffect(() => {
+  //   async function loadVans() {
+  //     setLoading(true)
+  //     try {
+  //       const data = await getVans()
+  //       setVans(data)
+  //     } catch (err) {
+  //       setError(err)
+  //     }
+  //     setLoading(false)
+  //   }
+  //   loadVans()
+  // }, [])
+
+  // if (loading) {
+  //   return <h1 aria-live="polite">Loading...</h1>
+  // }
 
   if (error) {
     return <h1 aria-live="assertive">There was an error: {error.message}</h1>
