@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
-import Vans from './pages/Vans'
+import Vans, { loader as vansLoader } from './pages/Vans'
 import VanDetails from './pages/VanDetails'
 import Layout from './Layout'
 import Dashboard from './pages/host/Dashboard'
@@ -18,32 +23,32 @@ import Pricing from './pages/host/Pricing'
 import Photos from './pages/host/Photos'
 import NotFound from './pages/NotFound'
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="vans" element={<Vans />} />
-          <Route path="vans/:id" element={<VanDetails />} />
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="vans" element={<Vans />} loader={vansLoader} />
+      <Route path="vans/:id" element={<VanDetails />} />
 
-          <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVansDetails />}>
-              <Route index element={<Details />} />
-              <Route path="pricing" element={<Pricing />} />
-              <Route path="photos" element={<Photos />} />
-            </Route>
-          </Route>
-          <Route path="*" element={<NotFound />} />
+      <Route path="host" element={<HostLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="income" element={<Income />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="vans" element={<HostVans />} />
+        <Route path="vans/:id" element={<HostVansDetails />}>
+          <Route index element={<Details />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="photos" element={<Photos />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Route>
   )
+)
+
+function App() {
+  return <RouterProvider router={router} />
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
