@@ -10,31 +10,11 @@ export function loader() {
 
 export default function Vans() {
   const [searchParams, setSearchParams] = useSearchParams()
-  // const [vans, setVans] = useState([])
-  // const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const typeFilter = searchParams.get('type')
 
   const vans = useLoaderData()
-
-  // useEffect(() => {
-  //   async function loadVans() {
-  //     setLoading(true)
-  //     try {
-  //       const data = await getVans()
-  //       setVans(data)
-  //     } catch (err) {
-  //       setError(err)
-  //     }
-  //     setLoading(false)
-  //   }
-  //   loadVans()
-  // }, [])
-
-  // if (loading) {
-  //   return <h1 aria-live="polite">Loading...</h1>
-  // }
 
   if (error) {
     return <h1 aria-live="assertive">There was an error: {error.message}</h1>
