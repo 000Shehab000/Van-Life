@@ -25,6 +25,10 @@ header .container {
   text-decoration: none;
 }
 
+nav {
+  display: flex;
+}
+
 nav a {
   text-decoration: none;
   margin-left: 1.5rem;
