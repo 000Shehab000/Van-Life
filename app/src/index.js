@@ -23,11 +23,13 @@ import Pricing from './pages/host/Pricing'
 import Photos from './pages/host/Photos'
 import NotFound from './pages/NotFound'
 import Error from './components/Error'
+import Login from './pages/Login'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
+      <Route path="login" element={<Login />} />
       <Route path="about" element={<About />} />
       <Route
         path="vans"
