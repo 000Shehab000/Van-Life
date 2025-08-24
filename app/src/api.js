@@ -8,7 +8,8 @@ export async function getVans() {
   }
   const data = await res.json()
   if (!data.vans || !Array.isArray(data.vans)) {
-    throw new Error('Invalid data format')
+    throw new Error('Failed to fetch vans')
   }
+
   return data.vans
 }
