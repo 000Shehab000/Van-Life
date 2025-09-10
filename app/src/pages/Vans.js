@@ -1,6 +1,6 @@
 import Van from '../components/VanCard'
 import '../style/vans.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link, useLoaderData, useSearchParams } from 'react-router-dom'
 import { getVans } from '../api'
 
