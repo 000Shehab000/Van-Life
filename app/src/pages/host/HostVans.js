@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import HostVanCard from '../../components/HostVanCard'
 import '../../style/hostVans.css'
-import { useState, useEffect } from 'react'
+import { getHostVans } from '../../api'
+
+export function loader() {
+  return getHostVans()
+}
 
 export default function HostVans() {
-  const [hostVans, setHostVans] = useState([])
-  useEffect(() => {
-    fetch('/api/host/vans')
-      .then((res) => res.json())
-      .then((data) => setHostVans(data.vans))
-  }, [])
+  const hostVans = useLoaderData()
 
   const allHostVans = hostVans.map((hostVanobj) => (
     <Link to={hostVanobj.id} key={hostVanobj.id}>
