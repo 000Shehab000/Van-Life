@@ -16,7 +16,9 @@ import Reviews from './pages/host/Reviews'
 import './server'
 import HostLayout from './components/HostLayout'
 import HostVans, { loader as hostVansLoader } from './pages/host/HostVans'
-import HostVansDetails from './pages/host/HostVansDetails'
+import HostVansDetails, {
+  loader as hostVansDetailsLoader,
+} from './pages/host/HostVansDetails'
 import Details from './pages/host/Details'
 import Pricing from './pages/host/Pricing'
 import Photos from './pages/host/Photos'
@@ -68,6 +70,7 @@ const router = createBrowserRouter(
         <Route
           path="vans/:id"
           element={<HostVansDetails />}
+          loader={hostVansDetailsLoader}
           errorElement={<Error />}
         >
           <Route index element={<Details />} />
