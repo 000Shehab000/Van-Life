@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
@@ -9,7 +8,7 @@ import {
 import Home from './pages/Home'
 import About from './pages/About'
 import Vans, { loader as vansLoader } from './pages/Vans'
-import VanDetails from './pages/VanDetails'
+import VanDetails, { loader as VanDetailsLoader } from './pages/VanDetails'
 import Layout from './Layout'
 import Dashboard from './pages/host/Dashboard'
 import Income from './pages/host/Income'
@@ -37,11 +36,28 @@ const router = createBrowserRouter(
         loader={vansLoader}
         errorElement={<Error />}
       />
-      <Route path="vans/:id" element={<VanDetails />} />
+      <Route
+        path="vans/:id"
+        element={<VanDetails />}
+        loader={VanDetailsLoader}
+        errorElement={<Error />}
+      />
 
       <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async () => {
+            return null
+          }}
+        />
+        <Route
+          path="income"
+          element={<Income />}
+          loader={async () => {
+            return null
+          }}
+        />
         <Route path="reviews" element={<Reviews />} />
         <Route path="vans" element={<HostVans />} />
         <Route path="vans/:id" element={<HostVansDetails />}>
