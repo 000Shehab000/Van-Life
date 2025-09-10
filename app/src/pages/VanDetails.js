@@ -1,17 +1,13 @@
-import { useParams, Link, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { Link, useLocation, useLoaderData } from 'react-router-dom'
+import { getVans } from '../api'
+
+export function loader({ params }) {
+  return getVans(params.id)
+}
 
 export default function VanDetails() {
-  const { id } = useParams()
-  const [van, setVan] = useState({})
   const location = useLocation()
-  console.log(location)
-
-  useEffect(() => {
-    fetch(`/api/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans))
-  }, [id])
+  const van = useLoaderData()
 
   // use optional chaining for returning search key if exist else ""
   const search = location.state?.search || ''
