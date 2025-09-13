@@ -25,6 +25,7 @@ import Photos from './pages/host/Photos'
 import NotFound from './pages/NotFound'
 import Error from './components/Error'
 import Login from './pages/Login'
+import { requireAuth } from './utils'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -50,17 +51,23 @@ const router = createBrowserRouter(
           index
           element={<Dashboard />}
           loader={async () => {
-            return null
+            return await requireAuth()
           }}
         />
         <Route
           path="income"
           element={<Income />}
           loader={async () => {
-            return null
+            return await requireAuth()
           }}
         />
-        <Route path="reviews" element={<Reviews />} />
+        <Route
+          path="reviews"
+          element={<Reviews />}
+          loader={async () => {
+            return await requireAuth()
+          }}
+        />
         <Route
           path="vans"
           element={<HostVans />}
@@ -74,8 +81,20 @@ const router = createBrowserRouter(
           errorElement={<Error />}
         >
           <Route index element={<Details />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="photos" element={<Photos />} />
+          <Route
+            path="pricing"
+            element={<Pricing />}
+            loader={async () => {
+              return await requireAuth()
+            }}
+          />
+          <Route
+            path="photos"
+            element={<Photos />}
+            loader={async () => {
+              return await requireAuth()
+            }}
+          />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
