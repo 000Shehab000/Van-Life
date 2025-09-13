@@ -7,7 +7,7 @@ export async function requireAuth() {
   response.body = true // It's silly, but it works using mirage JS
 
   if (!isLoggedIn) {
-    return response
+    throw response
   }
 }
 
